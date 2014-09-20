@@ -45,7 +45,6 @@ public class sitevalue extends javax.swing.JFrame {
         Main = new javax.swing.JPanel();
         execute = new javax.swing.JButton();
         back = new javax.swing.JButton();
-        about = new javax.swing.JButton();
         add = new javax.swing.JButton();
         C1 = new javax.swing.JPanel();
         site = new javax.swing.JTextField();
@@ -82,19 +81,6 @@ public class sitevalue extends javax.swing.JFrame {
         back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backActionPerformed(evt);
-            }
-        });
-
-        about.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/about.png"))); // NOI18N
-        about.setToolTipText("Check the site value of your site using various factors");
-        about.setBorder(null);
-        about.setBorderPainted(false);
-        about.setContentAreaFilled(false);
-        about.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        about.setFocusPainted(false);
-        about.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aboutActionPerformed(evt);
             }
         });
 
@@ -172,8 +158,6 @@ public class sitevalue extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(about)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(add, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
@@ -184,8 +168,7 @@ public class sitevalue extends javax.swing.JFrame {
                 .addGroup(MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(back, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(execute, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(about, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(execute, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(add, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(C1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -265,10 +248,6 @@ public class sitevalue extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_backActionPerformed
 
-    private void aboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_aboutActionPerformed
-
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
         // TODO add your haUI1ling codUI1here:
     }//GEN-LAST:event_addActionPerformed
@@ -312,7 +291,6 @@ public class sitevalue extends javax.swing.JFrame {
     private javax.swing.JLabel Lsite;
     private javax.swing.JLabel Lvalue;
     private javax.swing.JPanel Main;
-    private javax.swing.JButton about;
     private javax.swing.JButton add;
     private javax.swing.JButton back;
     private javax.swing.JButton execute;

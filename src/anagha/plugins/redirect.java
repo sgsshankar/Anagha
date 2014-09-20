@@ -32,7 +32,6 @@ public class redirect extends javax.swing.JFrame {
     private void initComponents() {
 
         G1 = new javax.swing.ButtonGroup();
-        about = new javax.swing.JButton();
         back = new javax.swing.JButton();
         execute = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -42,19 +41,6 @@ public class redirect extends javax.swing.JFrame {
         BT2 = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        about.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/about.png"))); // NOI18N
-        about.setToolTipText("Create redirects for htaccess file from URL's");
-        about.setBorder(null);
-        about.setBorderPainted(false);
-        about.setContentAreaFilled(false);
-        about.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        about.setFocusPainted(false);
-        about.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aboutActionPerformed(evt);
-            }
-        });
 
         back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/back.png"))); // NOI18N
         back.setToolTipText("Back");
@@ -106,9 +92,7 @@ public class redirect extends javax.swing.JFrame {
                         .addComponent(execute, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(about)
-                        .addGap(18, 18, 18)
+                        .addGap(54, 54, 54)
                         .addComponent(BT1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                         .addComponent(BT2))
@@ -129,8 +113,7 @@ public class redirect extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(back, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(execute, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(about, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(execute, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(BT1)
                         .addComponent(BT2)))
@@ -146,10 +129,6 @@ public class redirect extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void aboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_aboutActionPerformed
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         UI u = new UI();
@@ -229,7 +208,6 @@ public class redirect extends javax.swing.JFrame {
     private javax.swing.JRadioButton BT1;
     private javax.swing.JRadioButton BT2;
     private javax.swing.ButtonGroup G1;
-    private javax.swing.JButton about;
     private javax.swing.JButton back;
     private javax.swing.JButton execute;
     private javax.swing.JScrollPane jScrollPane2;
