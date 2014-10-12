@@ -178,6 +178,11 @@ public class UI extends javax.swing.JFrame {
                 sitevalue.setVisible(true);
                 this.dispose();
                 break;
+            case "geoip":
+                geoip geoip = new geoip();
+                geoip.setVisible(true);
+                this.dispose();
+                break;
             case "default":
                 status.setText("Ecode not found");
                 break;

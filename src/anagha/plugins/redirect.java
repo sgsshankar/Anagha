@@ -40,7 +40,7 @@ public class redirect extends javax.swing.JFrame {
         BT1 = new javax.swing.JRadioButton();
         BT2 = new javax.swing.JRadioButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Redirect | Anaga");
 
         back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/back.png"))); // NOI18N
         back.setToolTipText("Back");
