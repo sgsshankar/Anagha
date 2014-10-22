@@ -18,8 +18,11 @@ Site Value - Site Value checker
 Ecode forms the basic navigation key to use the plugins.
 
 *dsearch* - Domain search
+
 *geoip* - Geo Locator
+
 *redirect* - Redirect Generator
+
 *sitevalue* - Site Value checker
 
 
