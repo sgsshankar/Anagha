@@ -41,6 +41,9 @@ public class redirect extends javax.swing.JFrame {
         BT2 = new javax.swing.JRadioButton();
 
         setTitle("Redirect | Anaga");
+        setLocationByPlatform(true);
+        setUndecorated(true);
+        setResizable(false);
 
         back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/back.png"))); // NOI18N
         back.setToolTipText("Back");
@@ -128,6 +131,7 @@ public class redirect extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed

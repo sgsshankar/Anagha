@@ -55,6 +55,7 @@ public class dsearch extends javax.swing.JFrame {
         site = new javax.swing.JTextField();
 
         setTitle("Domain Search | Anagha");
+        setLocationByPlatform(true);
         setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(400, 300));
         setResizable(false);

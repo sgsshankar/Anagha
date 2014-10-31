@@ -53,6 +53,7 @@ public class geoip extends javax.swing.JFrame {
         status = new javax.swing.JLabel();
 
         setTitle("Geo IP | Anaga");
+        setLocationByPlatform(true);
         setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(400, 300));
         setResizable(false);
