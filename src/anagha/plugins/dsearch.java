@@ -200,7 +200,7 @@ public class dsearch extends javax.swing.JFrame {
                 status.setText("Finished");
             }
         } catch (IOException ex) {
-            Logger.getLogger(sitevalue.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(dsearch.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_executeActionPerformed
 

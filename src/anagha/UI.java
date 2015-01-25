@@ -183,11 +183,15 @@ public class UI extends javax.swing.JFrame {
                 geoip.setVisible(true);
                 this.dispose();
                 break;
+            case "searchvalue":
+                searchvalue searchvalue = new searchvalue();
+                searchvalue.setVisible(true);
+                this.dispose();
+                break;
             case "default":
-                status.setText("Ecode not found");
+                status.setText("Ecode not valid");
                 break;
         }
-        
     }//GEN-LAST:event_executeActionPerformed
 
     /**

@@ -189,7 +189,7 @@ public class geoip extends javax.swing.JFrame {
                 status.setText("Finished");
             }
         } catch (IOException ex) {
-            Logger.getLogger(sitevalue.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(geoip.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_executeActionPerformed
 
