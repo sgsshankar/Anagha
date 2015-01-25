@@ -13,6 +13,8 @@ Redirect - .htaccess Redirect Generator
 
 Site Value - Site Value checker
 
+Search Value - Search Value checker
+
 ##Ecode
 
 Ecode forms the basic navigation key to use the plugins.
