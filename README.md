@@ -25,4 +25,6 @@ Ecode forms the basic navigation key to use the plugins.
 
 *sitevalue* - Site Value checker
 
+*searchvalue* - Search Value checker
+
 
