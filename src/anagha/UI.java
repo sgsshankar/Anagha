@@ -188,6 +188,11 @@ public class UI extends javax.swing.JFrame {
                 searchvalue.setVisible(true);
                 this.dispose();
                 break;
+            case "ipinfo":
+                ipinfo ipinfo = new ipinfo();
+                ipinfo.setVisible(true);
+                this.dispose();
+                break;
             case "default":
                 status.setText("Ecode not valid");
                 break;

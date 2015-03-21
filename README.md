@@ -15,6 +15,8 @@ Site Value - Site Value checker
 
 Search Value - Search Value checker
 
+IpInfo - Ip Information
+
 ##Ecode
 
 Ecode forms the basic navigation key to use the plugins.
@@ -28,5 +30,7 @@ Ecode forms the basic navigation key to use the plugins.
 *sitevalue* - Site Value checker
 
 *searchvalue* - Search Value checker
+
+*ipinfo* - Ip Information
 
 
