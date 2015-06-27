@@ -17,6 +17,8 @@ Search Value - Search Value checker
 
 IpInfo - Ip Information
 
+Feedcheck - RSS Feedchecker
+
 ##Ecode
 
 Ecode forms the basic navigation key to use the plugins.
@@ -32,5 +34,7 @@ Ecode forms the basic navigation key to use the plugins.
 *searchvalue* - Search Value checker
 
 *ipinfo* - Ip Information
+
+*feedcheck* - Feed Check
 
 

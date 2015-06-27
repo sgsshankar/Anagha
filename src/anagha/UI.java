@@ -193,6 +193,11 @@ public class UI extends javax.swing.JFrame {
                 ipinfo.setVisible(true);
                 this.dispose();
                 break;
+            case "feedcheck":
+                feedcheck feedcheck = new feedcheck();
+                feedcheck.setVisible(true);
+                this.dispose();
+                break;
             case "default":
                 status.setText("Ecode not valid");
                 break;
