@@ -198,6 +198,11 @@ public class UI extends javax.swing.JFrame {
                 feedcheck.setVisible(true);
                 this.dispose();
                 break;
+            case "similarsearch":
+                similarsearch similarsearch = new similarsearch();
+                similarsearch.setVisible(true);
+                this.dispose();
+                break;
             case "default":
                 status.setText("Ecode not valid");
                 break;

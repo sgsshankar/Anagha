@@ -19,6 +19,8 @@ IpInfo - Ip Information
 
 Feedcheck - RSS Feedchecker
 
+SimilarSearch - Similar Site finder
+
 ##Ecode
 
 Ecode forms the basic navigation key to use the plugins.
@@ -36,5 +38,7 @@ Ecode forms the basic navigation key to use the plugins.
 *ipinfo* - Ip Information
 
 *feedcheck* - Feed Check
+
+*similarsearch* - Similar Site finder
 
 

@@ -18,11 +18,8 @@ import java.util.logging.Logger;
  *
  * @author shanky
  */
-public class feedcheck extends javax.swing.JFrame {
+public class similarsearch extends javax.swing.JFrame {
 
-    /**
-     * Creates new form feedcheck
-     */
     
     String url;
     String response;
@@ -30,8 +27,11 @@ public class feedcheck extends javax.swing.JFrame {
     HttpURLConnection con;
     int responseCode;
     BufferedReader in;
-    
-    public feedcheck() {
+
+    /**
+     * Creates new form similarsearch
+     */
+    public similarsearch() {
         initComponents();
     }
 
@@ -45,20 +45,17 @@ public class feedcheck extends javax.swing.JFrame {
     private void initComponents() {
 
         site = new javax.swing.JTextField();
-        status = new javax.swing.JLabel();
-        C1 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        value = new javax.swing.JTextArea();
+        execute = new javax.swing.JButton();
         back = new javax.swing.JButton();
         add = new javax.swing.JButton();
-        execute = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        value = new javax.swing.JTextArea();
+        status = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Feed Check  | Anagha");
+        setTitle("Similar Search | Anaga");
         setLocationByPlatform(true);
         setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(400, 300));
-        setResizable(false);
 
         site.setText("example.com");
         site.setToolTipText("example.com");
@@ -73,23 +70,18 @@ public class feedcheck extends javax.swing.JFrame {
             }
         });
 
-        status.setToolTipText("");
-
-        value.setEditable(false);
-        value.setColumns(20);
-        value.setRows(5);
-        jScrollPane2.setViewportView(value);
-
-        javax.swing.GroupLayout C1Layout = new javax.swing.GroupLayout(C1);
-        C1.setLayout(C1Layout);
-        C1Layout.setHorizontalGroup(
-            C1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2)
-        );
-        C1Layout.setVerticalGroup(
-            C1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
-        );
+        execute.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/execute.png"))); // NOI18N
+        execute.setToolTipText("Execute");
+        execute.setBorder(null);
+        execute.setBorderPainted(false);
+        execute.setContentAreaFilled(false);
+        execute.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        execute.setFocusPainted(false);
+        execute.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                executeActionPerformed(evt);
+            }
+        });
 
         back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/back.png"))); // NOI18N
         back.setToolTipText("Back");
@@ -117,18 +109,12 @@ public class feedcheck extends javax.swing.JFrame {
             }
         });
 
-        execute.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/execute.png"))); // NOI18N
-        execute.setToolTipText("Execute");
-        execute.setBorder(null);
-        execute.setBorderPainted(false);
-        execute.setContentAreaFilled(false);
-        execute.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        execute.setFocusPainted(false);
-        execute.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                executeActionPerformed(evt);
-            }
-        });
+        value.setEditable(false);
+        value.setColumns(20);
+        value.setRows(5);
+        jScrollPane2.setViewportView(value);
+
+        status.setToolTipText("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -137,34 +123,36 @@ public class feedcheck extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(C1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(status, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(execute, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(execute, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(add, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(site, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(site, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane2)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(status, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(back, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(execute, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addComponent(add, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(add, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(back, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(execute))
                     .addComponent(site, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(11, 11, 11)
-                .addComponent(C1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(status, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -187,20 +175,10 @@ public class feedcheck extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_siteKeyPressed
 
-    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
-        UI u= new UI();
-        u.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_backActionPerformed
-
-    private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addActionPerformed
-
     private void executeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_executeActionPerformed
 
         try {
-            url = "http://ajax.googleapis.com/ajax/services/feed/lookup?v=1.0&q="+site.getText();
+            url = "http://www.similarsitesearch.com/api/similar/"+site.getText();
             obj = new URL(url);
             con = (HttpURLConnection) obj.openConnection();
             con.setRequestProperty("User-Agent", "Anagha");
@@ -213,21 +191,68 @@ public class feedcheck extends javax.swing.JFrame {
             {
                 in = new BufferedReader(new InputStreamReader(con.getInputStream()));
                 response=in.readLine();
-                String query = JsonPath.read(response, "$.responseData[*].query");
-                String queryUrl = JsonPath.read(response, "$.responseData[*].url");
-                String responseDetails = JsonPath.read(response, "$.responseData[*].responseDetails");
-                String responseStatus = JsonPath.read(response, "$.responseData[*].responseStatus");
-                value.append("Query: "+query+"\n");
-                value.append("QueryURL "+queryUrl+"\n");
-                value.append("ResponseDetails "+responseDetails+"\n");
-                value.append("ResponseStatus "+responseStatus);
+                String r0 = JsonPath.read(response, "$.r0");
+                String r1 = JsonPath.read(response, "$.r1");
+                String r2 = JsonPath.read(response, "$.r2");
+                String r3 = JsonPath.read(response, "$.r3");
+                String r4 = JsonPath.read(response, "$.r4");
+                String r5 = JsonPath.read(response, "$.r5");
+                String r6 = JsonPath.read(response, "$.r6");
+                String r7 = JsonPath.read(response, "$.r7");
+                String r8 = JsonPath.read(response, "$.r8");
+                String r9 = JsonPath.read(response, "$.r9");
+                String r10 = JsonPath.read(response, "$.r10");
+                String r11 = JsonPath.read(response, "$.r11");
+                String r12 = JsonPath.read(response, "$.r12");
+                String r13 = JsonPath.read(response, "$.r13");
+                String r14 = JsonPath.read(response, "$.r14");
+                String r15 = JsonPath.read(response, "$.r15");
+                String r16 = JsonPath.read(response, "$.r16");
+                String r17 = JsonPath.read(response, "$.r17");
+                String r18 = JsonPath.read(response, "$.r18");
+                String r19 = JsonPath.read(response, "$.r19");
+                value.append("Total: "+JsonPath.read(response, "$.num"));
+                value.append("\n"+"Status: "+JsonPath.read(response, "$.status"));
+                if(r0!=null) {
+                value.append("\n"+"URL's: \n");
+                value.append(r0+"\n");
+                value.append(r1+"\n");
+                value.append(r2+"\n");
+                value.append(r3+"\n");
+                value.append(r4+"\n");
+                value.append(r5+"\n");
+                value.append(r6+"\n");
+                value.append(r7+"\n");
+                value.append(r8+"\n");
+                value.append(r9+"\n");
+                value.append(r10+"\n");
+                value.append(r11+"\n");
+                value.append(r12+"\n");
+                value.append(r13+"\n");
+                value.append(r14+"\n");
+                value.append(r15+"\n");
+                value.append(r16+"\n");
+                value.append(r17+"\n");
+                value.append(r18+"\n");
+                value.append(r19+"\n");
+                }
                 in.close();
                 status.setText("Finished");
             }
         } catch (IOException ex) {
-            Logger.getLogger(dsearch.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(geoip.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_executeActionPerformed
+
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
+        UI u= new UI();
+        u.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_backActionPerformed
+
+    private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addActionPerformed
 
     /**
      * @param args the command line arguments
@@ -246,25 +271,24 @@ public class feedcheck extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(feedcheck.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(similarsearch.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(feedcheck.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(similarsearch.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(feedcheck.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(similarsearch.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(feedcheck.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(similarsearch.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new feedcheck().setVisible(true);
+                new similarsearch().setVisible(true);
             }
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel C1;
     private javax.swing.JButton add;
     private javax.swing.JButton back;
     private javax.swing.JButton execute;
