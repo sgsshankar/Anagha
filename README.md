@@ -42,3 +42,7 @@ Ecode forms the basic navigation key to use the plugins.
 *similarsearch* - Similar Site finder
 
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/sgsshankar/anagha/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
